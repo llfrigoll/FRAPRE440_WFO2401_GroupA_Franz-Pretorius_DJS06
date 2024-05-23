@@ -16,9 +16,6 @@ const products = [
 
 
 //EXERCISES
-names.forEach(name => console.log(name))
-provinces.forEach(province => console.log(province))
-
 names.forEach((name, index) => {
   let string = `${name} (${provinces[index]})`
   console.log(string)
@@ -65,3 +62,19 @@ console.log(namesWithS)
 
 
 //ADVANCED EXERCISES
+console.log(products.map(item => item.product))
+
+
+console.log(products.filter(item => item.product.length <= 5))
+
+
+console.log(products.filter(item => item.price > 0).map(item => Number(item.price)).reduce((total, num) => total + num))
+
+
+console.log(products.reduce((string, item) => string + ' ' + item.product, ''))
+
+
+console.log('Highest: ' + Math.max(...products.filter(item => item.price > 0).map(item => Number(item.price))) + '. Lowest: ' + Math.min(...products.filter(item => item.price > 0).map(item => Number(item.price))))
+
+
+console.log(products.map((item) => {return item = {name: item.product, cost: item.price}}))
